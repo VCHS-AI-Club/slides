@@ -22,6 +22,8 @@ img[alt~="center"] {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
+    align-items: center;
+    jystify-content: center;
 }
 
 .col4 {
@@ -176,12 +178,14 @@ _What state is available?_
 
 - Snake position
 - Body position
-- Apple position
-- Current direction
+- Wall position
+- **Apple position**
+- **Current direction**
+- **Danger position**
 
 ---
 
-# Actions
+# Snake Actions
 
 _What actions are available?_
 
@@ -201,3 +205,28 @@ _What actions are available?_
 </ul>
 
 </div>
+
+---
+
+# Snake Reward
+
+Eat food: +10
+
+Die: -100
+
+It won't sacrifice itself to eat food if the penalty is much higher than the reward. This will make the snake live longer (a future problem for future us).
+
+---
+
+# Code
+
+```python
+state = [
+    # Danger forward/right/left
+    0,0,0,0
+    # moving up/down/right/left
+    0,0,0,0
+    # food up/down/right/left
+    0,0,0
+]
+```
